@@ -1,27 +1,56 @@
-# Placement Platform — Backend MVP
+# CareerBridge — Placement & Recruitment Management System
 
-A learning project for a student/recruiter job board. Built with Node.js, Express, MongoDB and JWT authentication. **This is a backend starter, not a finished MERN app.**
+CareerBridge is a full-stack placement and recruitment management platform that connects students with recruiters through a role-based web application.
 
-## Setup
-1. Install Node.js 20+ and start MongoDB locally (or use MongoDB Atlas).
-2. `npm install`
-3. Copy `.env.example` to `.env` and set `MONGODB_URI`, `JWT_SECRET` and `CLIENT_ORIGIN`.
-4. `npm run dev`
-5. Check `GET http://localhost:5000/api/health`.
+## Features
 
-## Routes
-| Method | Route | Who | Purpose |
-|---|---|---|---|
-| POST | `/api/auth/register` | Public | `{name,email,password,role}` |
-| POST | `/api/auth/login` | Public | `{email,password}` returns JWT |
-| GET | `/api/jobs?q=&page=1` | Public | Search/paginate jobs |
-| POST | `/api/jobs` | Recruiter | `{title,company,location,description}` |
-| POST | `/api/jobs/:id/apply` | Student | Apply once |
-| GET | `/api/applications/mine` | Student | Own applications |
-| GET | `/api/jobs/:id/applications` | Job owner | View applicants |
-| PATCH | `/api/applications/:id/status` | Job owner | `{status:"reviewing"}` etc. |
+### Student
 
-For protected routes send `Authorization: Bearer YOUR_TOKEN`.
+- Registration and login
+- Browse and search jobs
+- Apply for jobs
+- Track application status
 
-## Before presenting as a finished resume project
-Build and test a React frontend; add stronger request validation, automated tests, rate limiting, deployment, screenshots, and a clear architecture explanation. Do not commit `.env` or real credentials. Never claim features you haven't implemented.
+### Recruiter
+
+- Registration and login
+- Post new jobs
+- View applicants
+- Review applications
+- Shortlist or reject candidates
+- Update application status
+
+## Tech Stack
+
+- React.js
+- Vite
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JWT
+- bcrypt
+- REST APIs
+
+## Application Flow
+
+### Student
+
+Register → Login → Browse Jobs → Apply → Track Application
+
+### Recruiter
+
+Register → Login → Post Job → View Applicants → Update Status
+
+## Project Structure
+
+```text
+careerbridge-placement-management/
+├── client/
+│   ├── src/
+│   ├── package.json
+│   └── index.html
+├── server.js
+├── package.json
+├── .env.example
+└── README.md
